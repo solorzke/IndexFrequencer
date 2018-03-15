@@ -31,14 +31,14 @@ def cleanMe(html):
     return text
 
 
-path = 'F:\GitHub\WebCrawler\web_crawler\crawled_html_pages'
+path = 'crawled_html_pages/'
 index = {}
 docNum = 0
 stop_words = set(stopwords.words('english'))                                                            #collection of stopwords to avoid       
 for filename in os.listdir(path):                                                                       #for every doc in folder...
     collection = {}                                                                                     #all words collected from this html file
     docNum += 1                                                                                         #Start with doc 1, then 2..3..4..500
-    file = codecs.open('F:\GitHub\WebCrawler\web_crawler\crawled_html_pages\\'+ filename,'r', 'utf-8')  #open the html file
+    file = codecs.open('crawled_html_pages/'+ filename,'r', 'utf-8')                                  #open the html file
     page_text = cleanMe(file)                                                                         #collect page text from html file
     tokens = nltk.word_tokenize(page_text)                                                              #tokenize page text
     filtered_sentence = [w for w in tokens if not w in stop_words]                                      #remove stopwords from page text
