@@ -67,11 +67,7 @@ for filename in os.listdir(path):                                               
     for token in collection:
         if token not in index:
             index[token] = ''
-        index[token] = index[token] + '['+ str(docNum) + ', ' + str(collection[token]) + ']'
-    if docNum == 2:
-        break
-    else:
-        continue            
+        index[token] = index[token] + '['+ str(docNum) + ', ' + str(collection[token]) + ']'           
 
 f = open('index.txt', 'w')
 vocab = open('uniqueWords.txt', 'w')
